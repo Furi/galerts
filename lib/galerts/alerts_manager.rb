@@ -45,13 +45,13 @@ module Galerts
 				s = tds[0].css('input[name=s]').first["value"]
 				query = tds[1].text
 				search_query = tds[1].css('a').first["href"]
-				volume = tds[2].text
-				frequency = tds[3].text
-				if tds[4].css('a').empty?
+				volume = tds[3].text
+				frequency = tds[4].text
+				if tds[5].css('a').empty?
 					feed_url = nil
 					delivery = EMAIL_DELIVERY
 				else
-					feed_url = tds[4].css('a')[1]["href"]
+					feed_url = tds[5].css('a')[1]["href"]
 					delivery = FEED_DELIVERY
 				end
 				email = @email # TODO: Could be one of many email addresses associated with account
