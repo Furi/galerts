@@ -168,7 +168,7 @@ module Galerts
 			login_page = @agent.get(login_url(domain))			
 			login_form = login_page.forms.first
 			login_form.Email = @email
-			login_form.Passwd = @password
+			login_form.add_field!("Passwd", @password)
 			login_resp = @agent.submit(login_form)
 			@auth_domains << domain
 		end
